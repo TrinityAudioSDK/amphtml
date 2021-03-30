@@ -230,4 +230,10 @@ export const EXPERIMENTS = [
     name: 'Optimization of story ad placements',
     spec: 'https://github.com/ampproject/amphtml/issues/33147',
   },
+  {
+    id: 'amp-trinity-tts-player',
+    name: 'Trinity Audio Text To Speech Player component',
+    spec: 'https://github.com/ampproject/amphtml/issues/26836',
+    cleanupIssue: 'https://github.com/ampproject/amphtml/issues/26838',
+  },
 ];
