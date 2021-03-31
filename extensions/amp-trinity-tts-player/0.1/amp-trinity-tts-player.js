@@ -78,7 +78,7 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
     this.iframe_.setAttribute('allowfullscreen', 'true');
     this.iframe_.setAttribute(
       'src',
-      `${TRINITY_URL}/player/trinity-ext.php/?sCampaignID=${this.unitId_}&readContentConfig=${readContentConfig}&SDKPlatform=${sdk.platform}&SDKVersion=${sdk.version}&SDKAppName=${sdk.appName}&SDKAppVersion=${sdk.appVersion}`
+      `${TRINITY_URL}/player/trinity-i/${this.unitId_}/?readContentConfig=${readContentConfig}&SDKPlatform=${sdk.platform}&SDKVersion=${sdk.version}&SDKAppName=${sdk.appName}&SDKAppVersion=${sdk.appVersion}`
     );
 
     this.applyFillContent(this.iframe_);
