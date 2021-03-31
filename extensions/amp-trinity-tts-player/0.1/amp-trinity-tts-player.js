@@ -63,6 +63,7 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
         dataType: 'html',
       })
     );
+
     const sdk = {
       platform: 'AMP',
       version: VERSION,
@@ -71,14 +72,17 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
         AMP.win.document.children[0]?.attributes['amp-version']?.value,
     };
 
-    const script = this.win.document.createElement('script');
-
-    script.setAttribute(
+    this.iframe_ = this.win.document.createElement('iframe');
+    this.iframe_.setAttribute('hidden', true);
+    this.iframe_.setAttribute('frameborder', '0');
+    this.iframe_.setAttribute('allowfullscreen', 'true');
+    this.iframe_.setAttribute(
       'src',
-      `${TRINITY_URL}/player/trinity/${this.unitId_}/?readContentConfig=${readContentConfig}&SDKPlatform=${sdk.platform}&SDKVersion=${sdk.version}&SDKAppName=${sdk.appName}&SDKAppVersion=${sdk.appVersion}`
+      `${TRINITY_URL}/player/trinity-ext.php/?sCampaignID=${this.unitId_}&readContentConfig=${readContentConfig}&SDKPlatform=${sdk.platform}&SDKVersion=${sdk.version}&SDKAppName=${sdk.appName}&SDKAppVersion=${sdk.appVersion}`
     );
 
-    this.element.appendChild(script);
+    this.applyFillContent(this.iframe_);
+    this.element.appendChild(this.iframe_);
 
     return new Promise((resolve) => {
       window.addEventListener('message', (event) => {
@@ -101,7 +105,12 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
 
     const {action, message} = eventData.value || {};
 
+    if (!action) {
+      return;
+    }
+
     if (action === 'playerReady') {
+      this.iframe_.removeAttribute('hidden');
       onPlayerReadyCallback();
     }
 
