@@ -52,8 +52,7 @@ limitations under the License.
   height="70"
   data-unit-id="XXXXXXX"
   data-page-url="https://example-publisher.com/article.html">
->
-</amp-trinity-tts-player>
+></amp-trinity-tts-player>
 ```
 
 ## Attributes
@@ -70,6 +69,10 @@ limitations under the License.
   <tr>
     <td width="40%"><strong>height (required)</strong></td>
     <td>The height of a player. Should be set to 70px for desktop and mobile</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong>data-params</strong></td>
+    <td>The list of additional parameters in JSON format string</td>
   </tr>
 </table>
 
@@ -111,7 +114,27 @@ limitations under the License.
   height="70"
   data-unit-id="XXXXXXX"
   data-page-url="https://example-publisher.com/article.html">
+></amp-trinity-tts-player>
+```
+
+# Additional params example (optional)
+
+Gives the ability to override default/cloud settings configuration. The list of parameters to be provided by [Trinity Audio](https://trinityaudio.ai/).
+
+```html
+<amp-trinity-tts-player
+  height="70"
+  data-unit-id="XXXXXXX"
+  data-page-url="https://example-publisher.com/article.html"
 >
+  <script type="application/json">
+    {
+      "params": {
+        "lang": "en",
+        "voiceId": "Amy"
+      }
+    }
+  </script>
 </amp-trinity-tts-player>
 ```
 
