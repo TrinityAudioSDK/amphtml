@@ -68,10 +68,10 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
         url: this.pageURL_,
         dataType: 'html',
       }),
-      platform: 'AMP',
-      version: VERSION,
-      appName: 'AMP',
-      appVersion:
+      SDKPlatform: 'AMP',
+      SDKVersion: VERSION,
+      SDKAppName: 'AMP',
+      SDKAppVersion:
         AMP.win.document.children[0]?.attributes['amp-version']?.value,
     }).toString();
 
