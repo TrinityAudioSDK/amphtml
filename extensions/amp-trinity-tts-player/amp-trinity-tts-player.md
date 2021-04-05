@@ -119,7 +119,8 @@ limitations under the License.
 
 # Additional params example (optional)
 
-Gives the ability to override default/cloud settings configuration. The list of parameters to be provided by [Trinity Audio](https://trinityaudio.ai/).
+The ability to override default/cloud settings configuration. The full list of parameters is provided by Trinity Audio as part of the integration process.
+This is to allow runtime overrides which are content specific VS the general unit config.
 
 ```html
 <amp-trinity-tts-player

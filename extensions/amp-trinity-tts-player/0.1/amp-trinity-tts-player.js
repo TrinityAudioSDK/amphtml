@@ -75,7 +75,7 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
         AMP.win.document.children[0]?.attributes['amp-version']?.value,
     }).toString();
 
-    const src = `${TRINITY_URL}/player/trinity-iframe/${this.unitId_}/?${queryParams}`;
+    const src = `${TRINITY_URL}/player/trinity-i/${this.unitId_}/?${queryParams}`;
 
     this.iframe_ = this.win.document.createElement('iframe');
     this.iframe_.setAttribute('src', src);
