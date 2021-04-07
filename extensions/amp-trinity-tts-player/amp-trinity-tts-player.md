@@ -90,7 +90,7 @@ limitations under the License.
       },
       "triggers": {
         "trinityTTSPlayer": {
-          "on": "TRINITY_TTS",
+          "on": "amp-trinity-tts-event",
           "selector": "#trinity-tts-player",
           "vars": {
             "event_name": "custom",

@@ -25,6 +25,7 @@ import {user, userAssert} from '../../../src/log';
 const TAG = 'amp-trinity-tts-player';
 const VERSION = '0.1';
 const TRINITY_URL = 'https://trinitymedia.ai';
+const ANALYTICS_EVENT_TYPE = 'amp-trinity-tts-event';
 const TRINITY_EVENT_TYPE = 'TRINITY_TTS';
 
 export class AmpTrinityTTSPlayer extends AMP.BaseElement {
@@ -121,7 +122,7 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
 
     triggerAnalyticsEvent(
       this.element,
-      TRINITY_EVENT_TYPE,
+      ANALYTICS_EVENT_TYPE,
       dict({
         'eventAction': action,
         'duration': duration,
