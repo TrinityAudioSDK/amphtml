@@ -69,6 +69,7 @@ export class AmpTrinityTTSPlayer extends AMP.BaseElement {
         url: this.pageURL_,
         dataType: 'html',
       }),
+      readContentType: 'URL',
       SDKPlatform: 'AMP',
       SDKVersion: VERSION,
       SDKAppName: 'AMP',
